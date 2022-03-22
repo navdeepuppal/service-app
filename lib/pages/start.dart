@@ -52,27 +52,28 @@ class _StartPageState extends State<StartPage> {
         body: Column(
       children: [
         SizedBox(
-          height: 100,
+          height: 65,
         ),
         Container(
-          padding: EdgeInsets.symmetric(horizontal: 50),
-          height: MediaQuery.of(context).size.height * 0.45,
+          padding: EdgeInsets.symmetric(horizontal: 70),
+          height: MediaQuery.of(context).size.height * 0.42,
           width: MediaQuery.of(context).size.width,
           child: GridView.builder(
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3,
-                childAspectRatio: 1.0,
-                crossAxisSpacing: 8.0,
-                mainAxisSpacing: 8.0,
-              ),
-              physics: NeverScrollableScrollPhysics(),
-              itemCount: services.length,
-              itemBuilder: (BuildContext context, int index) {
-                return FadeAnimation(
-                    (1.0 + index) / 4,
-                    serviceContainer(
-                        services[index].imageURL, services[index].name, index));
-              }),
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 3,
+              childAspectRatio: 1.0,
+              crossAxisSpacing: 8.0,
+              mainAxisSpacing: 8.0,
+            ),
+            physics: NeverScrollableScrollPhysics(),
+            itemCount: services.length,
+            itemBuilder: (BuildContext context, int index) {
+              return FadeAnimation(
+                  (1.0 + index) / 4,
+                  serviceContainer(
+                      services[index].imageURL, services[index].name, index));
+            },
+          ),
         ),
         Expanded(
           child: Container(
